@@ -17,7 +17,15 @@ export class HeroeComponent{
     }
     
     // get y set
-    get getNombreCapitalizado() {
+    get getNombreCapitalizado():string {
         return this.nombre.toUpperCase();
+    }
+
+    cambiarNombre():void {
+        this.nombre = 'Linterna Verde';
+    }
+
+    cambiarEdad():void {
+        this.edad = 10;
     }
 }
