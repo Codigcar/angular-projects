@@ -14,4 +14,7 @@
     Borrar primer heroe
 </button>
 <br>
-<span>Ultimo heroe borrado: {{ultimoHeroeBorrado}} </span>
+<span *ngIf="ultimoHeroeBorrado">
+    <!-- el ngIf valida el '' || false || null | undifined -->
+    Ultimo heroe borrado: {{ultimoHeroeBorrado}} 
+</span>
