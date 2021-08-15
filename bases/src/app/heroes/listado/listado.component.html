@@ -14,7 +14,17 @@
     Borrar primer heroe
 </button>
 <br>
-<span *ngIf="ultimoHeroeBorrado">
+
+<!-- if():else() se hace con ng-template -->
+<span *ngIf="ultimoHeroeBorrado; else noBorrado">
     <!-- el ngIf valida el '' || false || null | undifined -->
     Ultimo heroe borrado: {{ultimoHeroeBorrado}} 
 </span>
+
+<!-- <span *ngIf="!ultimoHeroeBorrado">
+    No ha borrado nada
+</span> -->
+<ng-template #noBorrado>
+    No ha borrado nada
+</ng-template>
+
