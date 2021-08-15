@@ -1,1 +1,17 @@
-<p>listado works!</p>
+<p>LISTADO COMPONENT</p>
+
+<ul>
+    <li *ngFor="let heroe of heroes; let i = index" >
+        {{heroe}}
+    </li>
+</ul>
+
+<button (click)="borrarTodoLosHeroes()" >
+    BorrarTodoLosHeroes
+</button>
+
+<button (click)="borrarPrimerHeroe()">
+    Borrar primer heroe
+</button>
+<br>
+<span>Ultimo heroe borrado: {{ultimoHeroeBorrado}} </span>

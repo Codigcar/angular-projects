@@ -17,5 +17,19 @@ export class ListadoComponent implements OnInit {
     // inicializar cosas
     // ejem: si se hace alguna peticion en algun servicio y patraer la info
   }
+  
+  heroes:string[] = ['Spiderman', 'Iroman', 'Hulk', 'Thor'];
+  ultimoHeroeBorrado:string = '';
+
+  // Borrar heroe
+  borrarTodoLosHeroes = () => {
+    this.heroes = [];
+  }
+
+  borrarPrimerHeroe = () => {
+    // this.heroes.shift();
+    this.ultimoHeroeBorrado = this.heroes.shift() || '';
+  }
+  
 
 }
