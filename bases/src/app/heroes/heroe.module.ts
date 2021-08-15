@@ -11,10 +11,12 @@ import { ListadoComponent } from './listado/listado.component';
     ],
     // Que cosas quiero que sea visible afuera de este modulo
     exports: [
+        HeroeComponent,
         ListadoComponent
     ],
     // aqui dentro van solo módulos, objetos que se colocan en los imports
     imports: [
+        // Ofrece las directivas ngIf y ngFor
         CommonModule
     ]
 })
