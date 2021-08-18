@@ -12,4 +12,10 @@ export class MainPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  agregar = (event: any) => {
+    // Evitar el refresh al presionar el buton en el formulario
+    event.preventDefault();
+    console.log('formulario submit');
+    
+  }
 }

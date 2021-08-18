@@ -15,10 +15,10 @@
   <div class="col">
     <h3>Agregar</h3>
     <hr />
-    <form>
+    <form (submit)="agregar($event)">
         <input type="text" placeholder="Nombre">
         <input type="text" placeholder="Poder">
-        <button>Agregar</button>
+        <button type="submit">Agregar</button>
     </form>
 </div>
 
