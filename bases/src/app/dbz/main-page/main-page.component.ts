@@ -36,13 +36,14 @@ export class MainPageComponent implements OnInit {
     poder: 2000
   }
 
-  cambiarNombre = (event:any) => {
-    console.log('Nombre event.target.value: ',event.target.value);
-    this.nuevo.nombre = event.target.value;
-  }
+  // Esto es para sin NgModel
+  // cambiarNombre = (event:any) => {
+  //   console.log('Nombre event.target.value: ',event.target.value);
+  //   this.nuevo.nombre = event.target.value;
+  // }
 
-  cambiarPoder = (event:any) => {
-    console.log('Poder event.target.value: ',event.target.value);
-    this.nuevo.poder = event.target.value;
-  }
+  // cambiarPoder = (event:any) => {
+  //   console.log('Poder event.target.value: ',event.target.value);
+  //   this.nuevo.poder = event.target.value;
+  // }
 }

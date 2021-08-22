@@ -18,13 +18,23 @@
     <form (ngSubmit)="agregar()">
       <!-- []: establecer una propiedad al objeto y 
             (): emitir o escuchar eventos -->
-      <input [value]=nuevo.nombre 
-             (input)="cambiarNombre($event)" 
+
+
+            <!-- sin ngModel -->
+      <!-- [value]=nuevo.nombre 
+             (input)="cambiarNombre($event)"  -->
+
+             <!-- con ngModel -->
+      <input [(ngModel)]="nuevo.nombre"
+             name="nombre"
              type="text" 
              placeholder="Nombre" />
 
-      <input [value]=nuevo.poder 
-             (input)="cambiarPoder($event)"
+             <!-- [value]=nuevo.poder 
+             (input)="cambiarPoder($event)" -->
+
+      <input [(ngModel)]="nuevo.poder"
+             name="poder"
              type="text" 
              placeholder="Poder" />
       <button type="submit">Agregar</button>
