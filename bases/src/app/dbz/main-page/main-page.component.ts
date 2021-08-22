@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Personaje {
+  nombre: string,
+  poder: number
+}
+
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
@@ -23,6 +28,21 @@ export class MainPageComponent implements OnInit {
     
   // Con ngSubmit de Angular
   agregar = () => {
-    console.log('formulario submit con ngSubmit ');
+    console.log('formulario submit con ngSubmit: ', this.nuevo);
+  }
+
+  nuevo:Personaje = {
+    nombre: 'Goku',
+    poder: 2000
+  }
+
+  cambiarNombre = (event:any) => {
+    console.log('Nombre event.target.value: ',event.target.value);
+    this.nuevo.nombre = event.target.value;
+  }
+
+  cambiarPoder = (event:any) => {
+    console.log('Poder event.target.value: ',event.target.value);
+    this.nuevo.poder = event.target.value;
   }
 }
