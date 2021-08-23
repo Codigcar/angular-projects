@@ -25,10 +25,32 @@ export class MainPageComponent implements OnInit {
     //   console.log('formulario submit');
     
     // }
+
     
+  personajes: Personaje[] = [
+    {
+      nombre:'Krilin',
+      poder: 1000
+    },
+    {
+      nombre:'Vegeta',
+      poder: 2000
+    }
+  ]
+
   // Con ngSubmit de Angular
   agregar = () => {
     console.log('formulario submit con ngSubmit: ', this.nuevo);
+    if (this.nuevo.nombre.trim().length === 0){
+      console.log('Nombre no puedo ir vacio');
+      return;
+    }
+
+    this.personajes.push(this.nuevo);
+    this.nuevo = {
+      nombre:'',
+      poder:0
+    }
   }
 
   nuevo:Personaje = {
@@ -46,4 +68,6 @@ export class MainPageComponent implements OnInit {
   //   console.log('Poder event.target.value: ',event.target.value);
   //   this.nuevo.poder = event.target.value;
   // }
+
+
 }
