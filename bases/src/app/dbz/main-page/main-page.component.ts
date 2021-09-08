@@ -35,25 +35,16 @@ export class MainPageComponent implements OnInit {
     }
   ]
 
-  // Con ngSubmit de Angular
-  agregar = () => {
-    console.log('formulario submit con ngSubmit: ', this.nuevo);
-    if (this.nuevo.nombre.trim().length === 0){
-      console.log('Nombre no puedo ir vacio');
-      return;
-    }
-
-    this.personajes.push(this.nuevo);
-    this.nuevo = {
-      nombre:'',
-      poder:0
-    }
+  nuevo: Personaje = {
+    nombre:'Maestro Roshi',
+    poder: 1000
   }
+ 
 
-  nuevo:Personaje = {
-    nombre: 'Goku',
-    poder: 2000
-  }
+  // nuevo:Personaje = {
+  //   nombre: 'Goku',
+  //   poder: 2000
+  // }
 
   // Esto es para sin NgModel
   // cambiarNombre = (event:any) => {
@@ -65,6 +56,13 @@ export class MainPageComponent implements OnInit {
   //   console.log('Poder event.target.value: ',event.target.value);
   //   this.nuevo.poder = event.target.value;
   // }
+
+  agregarNuevoPersonaje(argumentoPersonaje:Personaje) {
+    console.log('agregarNuevoPersonaje');
+    console.log(argumentoPersonaje);
+    this.personajes.push(argumentoPersonaje);
+    
+  }
 
 
 }

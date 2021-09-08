@@ -3,35 +3,17 @@
 <hr />
 
 <div class="row">
+
   <div class="col">
     <app-personajes [listPersonajes]="personajes"></app-personajes>
   </div>
+  
   <div class="col">
-    <h3>Agregar</h3>
-    <hr />
-    <form (ngSubmit)="agregar()">
-      <!-- []: establecer una propiedad al objeto y 
-            (): emitir o escuchar eventos -->
-
-
-            <!-- sin ngModel -->
-      <!-- [value]=nuevo.nombre 
-             (input)="cambiarNombre($event)"  -->
-
-             <!-- con ngModel -->
-      <input [(ngModel)]="nuevo.nombre"
-             name="nombre"
-             type="text" 
-             placeholder="Nombre" />
-
-             <!-- [value]=nuevo.poder 
-             (input)="cambiarPoder($event)" -->
-
-      <input [(ngModel)]="nuevo.poder"
-             name="poder"
-             type="text" 
-             placeholder="Poder" />
-      <button type="submit">Agregar</button>
-    </form>
+    <app-agregar 
+        [personajes]="personajes" 
+        [nuevo]="nuevo" 
+        (onNuevoPersonaje)="agregarNuevoPersonaje($event)"
+    >
+    </app-agregar>
   </div>
 </div>
