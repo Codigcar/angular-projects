@@ -3,9 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonModule} from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
+
+import { SharedModule } from './shared/shared.module';
+import { GifsModule } from './gifs/gifs.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,8 +15,9 @@ import {MatInputModule} from '@angular/material/input';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatButtonModule,MatInputModule
+  
+    SharedModule,
+    GifsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
