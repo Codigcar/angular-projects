@@ -1,8 +1,16 @@
 <div class="sidebar">
-    <h3>Gifs-App</h3>
-    <div class="">
-      <a href="#">
-        Dashboard
-      </a>
-    </div>
+  <h3>Gifs-App</h3>
+  <div class="sidebar-item">
+    <!-- <a href="#" *ngFor="let item of historial">
+        {{item}}
+      </a> -->
+    <a href="#" 
+       mat-raised-button 
+       color="primary"
+       *ngFor="let item of historial"
+       >
+       {{item}}
+    </a>
+
   </div>
+</div>

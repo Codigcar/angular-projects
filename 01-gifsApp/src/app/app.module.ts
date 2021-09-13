@@ -15,7 +15,6 @@ import { GifsModule } from './gifs/gifs.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-  
     SharedModule,
     GifsModule
   ],
