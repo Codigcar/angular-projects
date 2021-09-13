@@ -20,6 +20,11 @@ export class BusquedaComponent implements OnInit {
     // get valor del input mediante etiqueta
     const valor = this.txtBuscar.nativeElement.value;
 
+    // Validar si es vacio
+    if( valor.trim().length === 0 ){
+      return;
+    }
+    
     // imprimir valor
     console.log('valor input: ', valor);
 
