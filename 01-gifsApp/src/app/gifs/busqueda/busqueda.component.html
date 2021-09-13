@@ -1,5 +1,9 @@
 <h2>Buscar:</h2>
 <mat-form-field class="input" appearance="outline">
     <mat-label>Busca tu Gifs favorito</mat-label>
-    <input matInput autocomplete="off">
+    <input  matInput 
+            autocomplete="off" 
+            #txtBuscar
+            (keyup.enter)="buscar()" 
+    > 
 </mat-form-field>
