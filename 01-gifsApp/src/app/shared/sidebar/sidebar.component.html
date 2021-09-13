@@ -8,6 +8,7 @@
        mat-raised-button 
        color="primary"
        *ngFor="let item of historial"
+       (click)="buscar(item)"
        >
        {{item | titlecase}}
     </a>
