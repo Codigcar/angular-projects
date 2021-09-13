@@ -6,7 +6,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatInputModule} from '@angular/material/input';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { ResultadosComponent } from './resultados/resultados.component';
-
+import {MatCardModule} from '@angular/material/card'; 
 
 @NgModule({
   declarations: [
@@ -22,6 +22,7 @@ import { ResultadosComponent } from './resultados/resultados.component';
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
+    MatCardModule
   ]
 })
 export class GifsModule { }

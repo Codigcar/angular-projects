@@ -1,7 +1,18 @@
 <div class="">
-    <p>Loremee ipsum dolor, sit amet consectetur adipisicing elit. Ratione non maxime sapiente, accusantium facere
-        tenetur
-        nostrum impedit vel! Odit voluptas quibusdam consectetur et similique rem assumenda nihil? Impedit,
-        necessitatibus
-        velit.</p>
+    <div class="results">
+        <div *ngFor="let gif of resultados">
+            <mat-card class="example-card">
+                <img mat-card-image [src]="gif.images.downsized_medium.url" [alt]="gif.images.title">
+                <mat-card-content>
+                    <p>
+                      {{gif.title}}
+                  </p>
+                </mat-card-content>
+              </mat-card>
+        </div>
+    </div>
+    
 </div>
+
+
+  
