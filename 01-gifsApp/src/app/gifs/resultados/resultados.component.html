@@ -1,6 +1,6 @@
 <div class="">
     <div class="results">
-        <div *ngFor="let gif of resultados">
+        <div *ngFor="let gif of resultados" class="animate__animated animate__bounce">
             <mat-card class="example-card">
                 <img mat-card-image [src]="gif.images.downsized_medium.url" [alt]="gif.title">
                 <mat-card-content>
