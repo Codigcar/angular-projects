@@ -22,5 +22,4 @@ export class SidebarComponent implements OnInit {
     console.log('value: ',value);
     this.gifsService.buscarGifs(value);
   }
-
 }
