@@ -9,10 +9,10 @@ import { VerPaisComponent } from './pages/ver-pais/ver-pais.component';
 
 @NgModule({
   declarations: [
-    PorCapitalComponent,
+    PorCapitalComponent, 
     PorPaisComponent,
     PorRegionComponent,
-    VerPaisComponent
+    VerPaisComponent 
   ],
   exports:[
     PorCapitalComponent,
