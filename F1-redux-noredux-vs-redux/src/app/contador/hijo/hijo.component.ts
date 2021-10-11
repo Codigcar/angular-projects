@@ -14,9 +14,6 @@ export class HijoComponent implements OnInit {
   @Input()
   public contador!: number;
 
-  @Output()
-  public cambioContador = new EventEmitter<number>();
-
   constructor(private store: Store<AppStoreI>) { }
 
   ngOnInit(): void {
@@ -24,8 +21,6 @@ export class HijoComponent implements OnInit {
   }
 
   public multiplicar() {
-    // this.contador *= 2;
-    // this.cambioContador.emit(this.contador);
     this.store.dispatch(actions.multiplicarActions({numero:10}));
   }
   
@@ -33,9 +28,5 @@ export class HijoComponent implements OnInit {
     this.store.dispatch(actions.dividirActions({numero:2}));
   }
 
-  // public resetNieto(nuevoContador: number) {
-  //   // this.contador = nuevoContador;
-  //   // this.cambioContador.emit(this.contador);
-  // }
 
 }

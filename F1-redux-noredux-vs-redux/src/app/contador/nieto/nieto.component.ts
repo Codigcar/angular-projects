@@ -12,8 +12,6 @@ export class NietoComponent implements OnInit {
 
   @Input()
   public contador!: number;
-  @Output()
-  public contadorCambio = new EventEmitter<number>();
 
   constructor(
     private store: Store<AppStoreI>
@@ -25,8 +23,6 @@ export class NietoComponent implements OnInit {
   }
 
   reset() {
-    // this.contador = 0;
-    // this.contadorCambio.emit(this.contador);
     this.store.dispatch(resetActions());
   }
 
