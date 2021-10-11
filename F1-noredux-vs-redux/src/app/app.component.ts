@@ -19,10 +19,13 @@ export class AppComponent {
 
   constructor(private store: Store<AppStore>) {
     this.contador = 30;
-    this.store.subscribe(state => {
-      console.log(state);
-      this.contador = state.contador;
-    })
+    // this.store.subscribe(state => {
+    //   console.log(state);
+    //   this.contador = state.contador;
+    // })
+
+    // traer solo un selector del store
+    this.store.select('contador').subscribe(contador => this.contador=contador);
   }
 
   public incrementar() {
