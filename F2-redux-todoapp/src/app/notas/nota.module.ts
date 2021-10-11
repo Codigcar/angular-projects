@@ -4,6 +4,7 @@ import { NotaAddComponent } from './nota-add/nota-add.component';
 import { NotaFooterComponent } from './nota-footer/nota-footer.component';
 import { NotaItemComponent } from './nota-item/nota-item.component';
 import { NotaListComponent } from './nota-list/nota-list.component';
+import { NotaPageComponent } from './nota-page/nota-page.component';
 
 
 
@@ -12,10 +13,14 @@ import { NotaListComponent } from './nota-list/nota-list.component';
     NotaAddComponent,
     NotaFooterComponent,
     NotaItemComponent,
-    NotaListComponent
+    NotaListComponent,
+    NotaPageComponent
   ],
   imports: [
     CommonModule
+  ],
+  exports:[
+    NotaPageComponent
   ]
 })
 export class NotaModule { }
