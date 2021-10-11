@@ -1,0 +1,20 @@
+<div class="">
+  <div class="">
+    <h1>Contador</h1>
+    <h2>{{ contador }}</h2>
+  </div>
+</div>
+
+<div class="">
+  <div class="">
+    <button mat-button (click)="incrementar()">sumar</button>
+    <button mat-button (click)="decrementar()">restar</button>
+  </div>
+</div>
+
+<div class="">
+  <div class="">
+    <app-hijo [contador]="contador" (cambioContador)="contador = $event" ></app-hijo>
+  </div>
+</div>
+
