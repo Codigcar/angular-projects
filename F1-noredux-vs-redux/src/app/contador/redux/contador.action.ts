@@ -3,6 +3,7 @@ import { createAction, props } from "@ngrx/store";
 
 export const incrementarActions = createAction('[Contador] Incrementar');
 export const decrementarActions = createAction('[Contador] Decrementar');
+export const resetActions = createAction('[Contador] Reset');
 
 export const multiplicarActions = createAction(
     '[Contador] Multiplicar', props<{ numero: number }>()

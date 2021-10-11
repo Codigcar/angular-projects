@@ -1,5 +1,5 @@
 import { Action, createReducer, on } from "@ngrx/store";
-import { decrementarActions, incrementarActions, multiplicarActions, dividirActions } from './contador.action';
+import { decrementarActions, incrementarActions, multiplicarActions, dividirActions, resetActions } from './contador.action';
 
 
 
@@ -27,9 +27,9 @@ const _counterReducer = createReducer(
     initialState,
     on(incrementarActions, (state) => state + 1),
     on(decrementarActions, (state) => state - 1),
-    // on(reset, (state) => 0)
     on(multiplicarActions, (state, props) => state * props.numero),
     on(dividirActions, (state, props) => state / props.numero),
+    on(resetActions, (state) => initialState)
     
 );
 

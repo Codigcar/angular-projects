@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppStoreI } from '../redux/app.reducers';
+import { AppStoreI } from '../redux/app.reducers.interface';
 import * as actions from '../redux/contador.action';
 
 @Component({
@@ -30,14 +30,12 @@ export class HijoComponent implements OnInit {
   }
   
   public dividir() {
-    // this.contador /= 2;
-    // this.cambioContador.emit(this.contador);
     this.store.dispatch(actions.dividirActions({numero:2}));
   }
 
-  public resetNieto(nuevoContador: number) {
-    // this.contador = nuevoContador;
-    // this.cambioContador.emit(this.contador);
-  }
+  // public resetNieto(nuevoContador: number) {
+  //   // this.contador = nuevoContador;
+  //   // this.cambioContador.emit(this.contador);
+  // }
 
 }

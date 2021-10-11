@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppStoreI } from './contador/redux/app.reducers';
+import { AppStoreI } from './contador/redux/app.reducers.interface';
 import { decrementarActions, incrementarActions } from './contador/redux/contador.action';
 
 
