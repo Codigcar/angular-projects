@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+
+import { NotaClass } from '../models/nota.model';
+import { AppStateI } from '../redux/app.reducer.interface';
 
 @Component({
   selector: 'app-nota-list',
@@ -7,9 +11,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotaListComponent implements OnInit {
 
-  constructor() { }
+  public notas: NotaClass[] = [];
+
+  constructor(private store: Store<AppStateI>) { }
 
   ngOnInit(): void {
+    this.store.select('notas').subscribe(notas => this.notas = notas);
   }
 
 }
