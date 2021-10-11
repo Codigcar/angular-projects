@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+// formularios reactivos
+import { ReactiveFormsModule } from '@angular/forms';
+
 // ngrx
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -19,6 +22,7 @@ import { environment } from 'src/environments/environment';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     NotaModule,
     StoreModule.forRoot({ notas: notaReducer }),
