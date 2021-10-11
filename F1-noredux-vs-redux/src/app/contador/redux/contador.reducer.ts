@@ -1,19 +1,35 @@
-import { Action } from "@ngrx/store";
+import { Action, createReducer, on } from "@ngrx/store";
 import { decrementarActions, incrementarActions } from "./contador.action";
 
 
 
-export function contadorReducer(state: number = 10, action: Action) {
+// export function contadorReducer(state: number = 10, action: Action) {
 
-    switch (action.type) {
-        case incrementarActions.type:
-            return state + 1;
+//     switch (action.type) {
+//         case incrementarActions.type:
+//             return state + 1;
 
-        case decrementarActions.type:
-            return state - 1;
+//         case decrementarActions.type:
+//             return state - 1;
 
-        default:
-            return state;
-    }
+//         default:
+//             return state;
+//     }
 
+// }
+
+
+
+// -------PROPIO DE NGRX, es más sencillo crear el contadorReducer
+export const initialState = 100;
+
+const _counterReducer = createReducer(
+    initialState,
+    on(incrementarActions, (state) => state + 1),
+    on(decrementarActions, (state) => state - 1),
+    // on(reset, (state) => 0)
+);
+
+export function contadorReducer(state: any, action: Action) {
+    return _counterReducer(state, action);
 }
