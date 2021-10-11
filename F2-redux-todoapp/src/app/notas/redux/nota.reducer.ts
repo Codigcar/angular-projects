@@ -2,7 +2,7 @@ import { createReducer, on } from '@ngrx/store';
 import { crearAction } from './nota.actions';
 import { NotaClass } from '../models/nota.model';
 
-export const initialState: NotaClass[] = [];
+export const initialState: NotaClass[] = [ new NotaClass('primera data')];
 
 const _notaReducer = createReducer(
     initialState,
