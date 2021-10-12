@@ -1,6 +1,9 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { NotaClass } from '../models/nota.model';
 import { FormControl, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AppStateI } from '../redux/app.reducer.interface';
+import * as actions from '../redux/nota.actions';
 
 @Component({
   selector: 'app-nota-item',
@@ -19,12 +22,19 @@ export class NotaItemComponent implements OnInit {
   public editando: boolean = false;
 
 
-  constructor() { }
+  constructor(private store: Store<AppStateI>) { }
 
   ngOnInit(): void {
     this.checkCompletado = new FormControl(this.notaChild.completado);
     this.txtInput = new FormControl(this.notaChild.texto, Validators.required);
+
+    // subscribirme para detectar lso cambios
+    this.checkCompletado.valueChanges.subscribe(valor => {
+      console.log('checkCompletado: ',valor);
+      this.store.dispatch(actions.toggleCompletadoAction({ id: this.notaChild.id }))
+    })
   }
+
 
   public editar() {
     this.editando = true;
@@ -33,8 +43,8 @@ export class NotaItemComponent implements OnInit {
     }, 1);
   }
 
-  public terminarEdicion(){
-    this.editando=false;
+  public terminarEdicion() {
+    this.editando = false;
   }
 
 }
