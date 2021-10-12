@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { AppStateI } from '../redux/app.reducer.interface';
+import { AppStateI } from '../redux/app.reducer';
 import * as actions from '../redux/nota.actions';
 
 @Component({

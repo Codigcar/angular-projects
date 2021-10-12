@@ -2,7 +2,7 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { NotaClass } from '../models/nota.model';
 import { FormControl, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { AppStateI } from '../redux/app.reducer.interface';
+import { AppStateI } from '../redux/app.reducer';
 import * as actions from '../redux/nota.actions';
 
 @Component({

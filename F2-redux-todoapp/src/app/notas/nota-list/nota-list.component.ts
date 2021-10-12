@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import { NotaClass } from '../models/nota.model';
-import { AppStateI } from '../redux/app.reducer.interface';
+import { AppStateI } from '../redux/app.reducer';
 
 @Component({
   selector: 'app-nota-list',

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppStateI } from '../redux/app.reducer';
+import * as actions from '../redux/filtro.actions';
+import { filtrosValidos } from '../redux/filtro.actions';
 
 @Component({
   selector: 'app-nota-footer',
@@ -7,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotaFooterComponent implements OnInit {
 
-  constructor() { }
+  filtroActual: actions.filtrosValidos = 'todos';
+
+  constructor(private store: Store<AppStateI>) { }
 
   ngOnInit(): void {
   }
