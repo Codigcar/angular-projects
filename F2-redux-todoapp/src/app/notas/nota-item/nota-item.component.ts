@@ -54,8 +54,11 @@ export class NotaItemComponent implements OnInit {
     if (this.txtInput.value === this.notaChild.texto) {
       return;
     }
-
     this.store.dispatch(actions.editarAction({ id: this.notaChild.id, texto: this.txtInput.value }))
+  }
+
+  public borrar() {
+    this.store.dispatch(actions.eliminarAction({id: this.notaChild.id}))
   }
 
 }
