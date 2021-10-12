@@ -30,7 +30,7 @@ export class NotaItemComponent implements OnInit {
 
     // subscribirme para detectar lso cambios
     this.checkCompletado.valueChanges.subscribe(valor => {
-      console.log('checkCompletado: ',valor);
+      console.log('checkCompletado: ', valor);
       this.store.dispatch(actions.toggleCompletadoAction({ id: this.notaChild.id }))
     })
   }
@@ -38,6 +38,8 @@ export class NotaItemComponent implements OnInit {
 
   public editar() {
     this.editando = true;
+    this.txtInput.setValue(this.notaChild.texto);
+
     setTimeout(() => {
       this.txtInputFisico.nativeElement.select();
     }, 1);
@@ -45,6 +47,15 @@ export class NotaItemComponent implements OnInit {
 
   public terminarEdicion() {
     this.editando = false;
+
+    if (this.txtInput.invalid) {
+      return;
+    }
+    if (this.txtInput.value === this.notaChild.texto) {
+      return;
+    }
+
+    this.store.dispatch(actions.editarAction({ id: this.notaChild.id, texto: this.txtInput.value }))
   }
 
 }
