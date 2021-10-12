@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { AppStateI } from '../redux/app.reducer.interface';
+import * as actions from '../redux/nota.actions';
 
 @Component({
   selector: 'app-nota-page',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NotaPageComponent implements OnInit {
 
-  constructor() { }
+  public completado: boolean = false;
+
+  constructor(private store: Store<AppStateI>) { }
 
   ngOnInit(): void {
   }
+
+  public toggleAll() {
+    this.completado = !this.completado;
+    this.store.dispatch(actions.toggleAllAction({ completado: this.completado }))
+  }
+
 
 }
