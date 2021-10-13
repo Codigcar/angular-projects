@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { AppStateI } from '../redux/app.reducer';
 import * as actions from '../redux/filtro.actions';
-import { filtrosValidos } from '../redux/filtro.actions';
+import { limpiarAllNotasCompletadosAction } from '../redux/nota.actions';
 
 @Component({
   selector: 'app-nota-footer',
@@ -28,12 +28,18 @@ export class NotaFooterComponent implements OnInit {
 
     this.store.subscribe((stateRedux) => {
       this.filtroActual = stateRedux.filtro;
-      this.pendientes = stateRedux.notas.filter(nota => !nota.completado).length;
+      this.pendientes = stateRedux.notas.filter(
+        (nota) => !nota.completado
+      ).length;
     });
   }
 
   public cambiarFiltro(filtro: actions.filtrosValidos) {
     console.log('filtroActual: ', filtro);
     this.store.dispatch(actions.setFiltroAction({ filtro: filtro }));
+  }
+
+  public limpiarCompletados() {
+    this.store.dispatch(limpiarAllNotasCompletadosAction() )
   }
 }
