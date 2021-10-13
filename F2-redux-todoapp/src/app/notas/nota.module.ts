@@ -17,14 +17,9 @@ import { FiltroPipe } from './filtro.pipe';
     NotaItemComponent,
     NotaListComponent,
     NotaPageComponent,
-    FiltroPipe
+    FiltroPipe,
   ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule
-  ],
-  exports:[
-    NotaPageComponent
-  ]
+  imports: [CommonModule, ReactiveFormsModule],
+  exports: [NotaPageComponent],
 })
-export class NotaModule { }
+export class NotaModule {}

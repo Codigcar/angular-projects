@@ -5,12 +5,11 @@ import { filtrosValidos } from './filtro.actions';
 import { filtroReducer } from './filtro.reducer';
 
 export interface AppStateI {
-    notas: NotaClass[],
-    filtro: filtrosValidos
+  notas: NotaClass[];
+  filtro: filtrosValidos;
 }
 
 export const appReducers: ActionReducerMap<AppStateI> = {
-    notas: notaReducer,
-    filtro:filtroReducer
-    
-}
+  notas: notaReducer,
+  filtro: filtroReducer,
+};

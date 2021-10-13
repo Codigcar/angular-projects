@@ -15,7 +15,7 @@ export class NotaAddComponent implements OnInit {
   txtInput: FormControl;
 
   constructor(private store: Store<AppStateI>) {
-    this.txtInput = new FormControl('txtInput', Validators.required);
+    this.txtInput = new FormControl('', Validators.required);
   }
 
   ngOnInit(): void {

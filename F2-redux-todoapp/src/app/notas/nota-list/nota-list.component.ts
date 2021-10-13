@@ -8,21 +8,19 @@ import { filtrosValidos } from '../redux/filtro.actions';
 @Component({
   selector: 'app-nota-list',
   templateUrl: './nota-list.component.html',
-  styleUrls: ['./nota-list.component.scss']
+  styleUrls: ['./nota-list.component.scss'],
 })
 export class NotaListComponent implements OnInit {
-
   public notas: NotaClass[] = [];
   public filtroActual!: filtrosValidos;
 
-  constructor(private store: Store<AppStateI>) { }
+  constructor(private store: Store<AppStateI>) {}
 
   ngOnInit(): void {
     // this.store.select('notas').subscribe(notas => this.notas = notas);
-    this.store.subscribe(state => {
+    this.store.subscribe((state) => {
       this.notas = state.notas;
       this.filtroActual = state.filtro;
-    })
+    });
   }
-
 }

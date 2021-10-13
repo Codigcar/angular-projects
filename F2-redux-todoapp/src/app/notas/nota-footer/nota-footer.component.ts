@@ -40,6 +40,6 @@ export class NotaFooterComponent implements OnInit {
   }
 
   public limpiarCompletados() {
-    this.store.dispatch(limpiarAllNotasCompletadosAction() )
+    this.store.dispatch(limpiarAllNotasCompletadosAction());
   }
 }

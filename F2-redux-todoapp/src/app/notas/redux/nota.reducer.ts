@@ -54,7 +54,9 @@ const _notaReducer = createReducer(
     })
   ),
 
-  on(limpiarAllNotasCompletadosAction, (state) => state.filter((nota) => !nota.completado))
+  on(limpiarAllNotasCompletadosAction, (state) =>
+    state.filter((nota) => !nota.completado)
+  )
 );
 
 export function notaReducer(state: any, action: any) {

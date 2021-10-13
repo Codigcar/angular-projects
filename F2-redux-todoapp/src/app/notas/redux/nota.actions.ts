@@ -25,4 +25,3 @@ export const toggleAllAction = createAction(
 export const limpiarAllNotasCompletadosAction = createAction(
   '[TODO] limpiar Notas All'
 );
-
