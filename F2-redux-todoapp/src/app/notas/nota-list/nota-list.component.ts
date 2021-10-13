@@ -19,9 +19,9 @@ export class NotaListComponent implements OnInit {
 
   ngOnInit(): void {
     // this.store.select('notas').subscribe(notas => this.notas = notas);
-    this.store.subscribe(nota => {
-      this.notas = nota.notas;
-      this.filtroActual = nota.filtro;
+    this.store.subscribe(state => {
+      this.notas = state.notas;
+      this.filtroActual = state.filtro;
     })
   }
 
