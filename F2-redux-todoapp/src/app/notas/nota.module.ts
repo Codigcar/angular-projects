@@ -8,6 +8,7 @@ import { NotaPageComponent } from './nota-page/nota-page.component';
 
 // formularios reactivos
 import { ReactiveFormsModule } from '@angular/forms';
+import { FiltroPipe } from './filtro.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     NotaFooterComponent,
     NotaItemComponent,
     NotaListComponent,
-    NotaPageComponent
+    NotaPageComponent,
+    FiltroPipe
   ],
   imports: [
     CommonModule,

@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 
 import { NotaClass } from '../models/nota.model';
 import { AppStateI } from '../redux/app.reducer';
+import { filtrosValidos } from '../redux/filtro.actions';
 
 @Component({
   selector: 'app-nota-list',
@@ -12,11 +13,16 @@ import { AppStateI } from '../redux/app.reducer';
 export class NotaListComponent implements OnInit {
 
   public notas: NotaClass[] = [];
+  public filtroActual!: filtrosValidos;
 
   constructor(private store: Store<AppStateI>) { }
 
   ngOnInit(): void {
-    this.store.select('notas').subscribe(notas => this.notas = notas);
+    // this.store.select('notas').subscribe(notas => this.notas = notas);
+    this.store.subscribe(nota => {
+      this.notas = nota.notas;
+      this.filtroActual = nota.filtro;
+    })
   }
 
 }
