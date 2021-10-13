@@ -10,21 +10,30 @@ import { filtrosValidos } from '../redux/filtro.actions';
   styleUrls: ['./nota-footer.component.scss'],
 })
 export class NotaFooterComponent implements OnInit {
-  filtroActual: actions.filtrosValidos = 'todos';
-  filtros: actions.filtrosValidos[] = [ 'todos','completados', 'pendientes'];
+  public filtroActual: actions.filtrosValidos = 'todos';
+  public filtros: actions.filtrosValidos[] = [
+    'todos',
+    'completados',
+    'pendientes',
+  ];
+
+  public pendientes: number = 0;
 
   constructor(private store: Store<AppStateI>) {}
 
   ngOnInit(): void {
-    this.store
-      .select('filtro')
-      .subscribe((filtro) => (this.filtroActual = filtro));
+    // this.store
+    //   .select('filtro')
+    //   .subscribe((filtro) => (this.filtroActual = filtro));
+
+    this.store.subscribe((stateRedux) => {
+      this.filtroActual = stateRedux.filtro;
+      this.pendientes = stateRedux.notas.filter(nota => !nota.completado).length;
+    });
   }
 
-  public cambiarFiltro(filtro: actions.filtrosValidos){
-    console.log('filtroActual: ',filtro);
-    this.store.dispatch(actions.setFiltroAction({filtro:filtro}))
-    
-    
+  public cambiarFiltro(filtro: actions.filtrosValidos) {
+    console.log('filtroActual: ', filtro);
+    this.store.dispatch(actions.setFiltroAction({ filtro: filtro }));
   }
 }
