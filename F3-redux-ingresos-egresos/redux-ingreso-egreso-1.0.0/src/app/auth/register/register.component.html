@@ -28,7 +28,10 @@
                 />
                 <div class="input-group-append">
                   <span class="input-group-text">
-                    <i *ngIf="registerFormGroup.get('nombre').valid" class="fa fa-check-circle" ></i>
+                    <i
+                      *ngIf="registerFormGroup.get('nombre').valid"
+                      class="fa fa-check-circle"
+                    ></i>
                   </span>
                 </div>
               </div>
@@ -65,7 +68,11 @@
             </div>
 
             <div class="form-group">
-              <button class="btn btn-primary submit-btn btn-block" [disabled]="registerFormGroup.invalid" >
+              <button
+                class="btn btn-primary submit-btn btn-block"
+                type="submit"
+                [disabled]="registerFormGroup.invalid"
+              >
                 Crear cuenta
               </button>
             </div>

@@ -15,8 +15,8 @@ const routes: Routes = [
     { path: 'register', component: RegisterComponent },
     {
         path: '',
-        // component: DashboardComponent,
-        component: RegisterComponent,
+        component: DashboardComponent,
+        // component: RegisterComponent,
         children: dashboardRoutes
     },
     { path: '**', redirectTo: '' }
