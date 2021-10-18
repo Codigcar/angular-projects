@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angular-ngrx-4c625": {
+      "hosting": {
+        "ingresoEgreso": [
+          "angular-ngrx-4c625"
+        ]
+      }
+    }
+  }
+}
